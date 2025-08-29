@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coca-Cola - Início</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="bg-danger text-white p-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <img src="img/logo_white.png" alt="Logo Coca-Cola" height="50" />
+        <nav>
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="index.html">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="historia.html">História</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="produtos.html">Produtos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="sustentabilidade.html"
+                >Sustentabilidade</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="curiosidades.html"
+                >Curiosidades</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container my-4">
+      <h1>Sustentabilidade</h1>
+      <p>A Coca-Cola está comprometida com ações sustentáveis, como:</p>
+      <ul>
+        <li>Uso de plástico reciclado</li>
+        <li>Economia de água nos processos</li>
+        <li>Uso de energia renovável</li>
+        <li>Reciclagem e reutilização de embalagens</li>
+      </ul>
+
+      <h2 class="mt-5">Gráfico de Sustentabilidade</h2>
+      <canvas id="graficoSustentabilidade" width="400" height="200"></canvas>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+      <p>&copy; 2025 - Projeto Educacional Senac PSG</p>
+    </footer>
+
+    <script>
+      const ctx = document
+        .getElementById("graficoSustentabilidade")
+        .getContext("2d");
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Reciclagem", "Água", "Energia"],
+          datasets: [
+            {
+              label: "Iniciativas 2024",
+              data: [70, 60, 80],
+              backgroundColor: ["#dc3545", "#0d6efd", "#198754"],
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+        },
+      });
+    </script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
